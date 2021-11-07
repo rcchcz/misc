@@ -60,6 +60,13 @@ void writeMatrix(int** m, int mR, int mC, double timeSpent) {
     fclose(mResFile);
 }
 
+void deallocateMatrix(int** m, int mR) {
+    for(int r = 0; r < mR; r++) {
+        free(m[r]);
+    }
+    free(m);
+}
+
 int main(int argc, char* argv[]) {
     int m1R, m1C, m2R, m2C;
     double timeSpent = 0;
@@ -68,6 +75,10 @@ int main(int argc, char* argv[]) {
     int** m2 = buildMatrix(argv[2], &m2R, &m2C);
     int** mRes = multMatrix(m1, m2, m1R, m2R, m2C, &timeSpent);
     writeMatrix(mRes, m1R, m2C, timeSpent);
+
+    deallocateMatrix(m1, m1R);
+    deallocateMatrix(m2, m2R);
+    deallocateMatrix(mRes, m1R);
 
     return 0;
 }
