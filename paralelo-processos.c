@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h> 
+#include <sys/time.h>
 #include <math.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -31,7 +31,7 @@ void deallocateMatrix(int** m, int mR) {
     free(m);
 }
 
-void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, clock_t begin) {
+void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, struct timeval begin) {
     int index = i * P;
     int row = index/m2C;
     int column = index%m2C;
@@ -63,8 +63,11 @@ void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, clo
             }
         }
     }
-    clock_t end = clock();
-    fprintf(mResFile, "%f", (double)(end - begin) / CLOCKS_PER_SEC);
+    // stop measuring time and calculate the elapsed time
+    struct timeval end;
+    gettimeofday(&end, 0);
+    long elapsedMilliseconds = end.tv_usec - begin.tv_usec; // current in microseconds, WORK HERE
+    fprintf(mResFile, "%ld", elapsedMilliseconds);
     fclose(mResFile);
 }
 
@@ -77,12 +80,14 @@ int main(int argc, char* argv[]) {
     int** m2 = buildMatrix(argv[2], &m2R, &m2C);
 
     int numberOfFiles = ceil((double)m1R*m2C / (double)P);
-
+    
+    // start measuring time
+    struct timeval begin;
+    gettimeofday(&begin, 0);
     for(int i = 0; i < numberOfFiles; i++) {
         pid_t pid = fork();
         if(pid == 0) {
             // multiplication start
-            clock_t begin = clock();
             multMatrix(m1, m2, i, P, m1R, m1C, m2C, begin);
             // multiplication end
             break;
