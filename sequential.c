@@ -7,7 +7,7 @@ int** buildMatrix(char* mFileArg, int* mR, int* mC) {
     fscanf(mFile, "%d %d", mR, mC);
     // allocate rows
     int** matrix = (int**)malloc(*mR * sizeof(int*));
-    // allocate collumns
+    // allocate columns
     for(int r = 0; r < *mR; r++) {
         matrix[r] = (int*)malloc(*mC * sizeof(int));
     }
@@ -24,7 +24,7 @@ int** buildMatrix(char* mFileArg, int* mR, int* mC) {
 int** multMatrix(int** m1, int** m2, int m1R, int m2R, int m2C, double* timeSpent) {
     // allocate rows
     int** matrix = (int**)malloc(m1R * sizeof(int*));
-    // allocate collumns
+    // allocate columns
     for(int r = 0; r < m1R; r++) {
         matrix[r] = (int*)malloc(m2C * sizeof(int));
     }
