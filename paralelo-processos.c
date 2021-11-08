@@ -37,11 +37,9 @@ void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, str
     int column = index%m2C;
     int count = 0;
     int r, c, ans;
-    char filename[20];
-    sprintf(filename, "resPro%d.txt", i+1);
-    FILE* mResFile = fopen(filename, "w");
-    fprintf(mResFile, "%d %d\n", m1R, m2C);
-    // MULT
+    int* auxV = (int*)malloc(3 * P * sizeof(int)); // r c ans
+    
+    // start multiplication
     for(r = row; r < m1R && count < P; r++) {
         if(r == row) { // first row
             for(c = column; c < m2C && count < P; c++) {
@@ -49,8 +47,11 @@ void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, str
                 for(int k = 0; k < m1C; k++) {
                     ans += m1[r][k] * m2[k][c];
                 }
+                auxV[count*3] = r+1;
+                auxV[count*3+1] = c+1;
+                auxV[count*3+2] = ans;
                 count++;
-                fprintf(mResFile, "c%d%d %d\n", r+1, c+1, ans);
+                //fprintf(mResFile, "c%d%d %d\n", r+1, c+1, ans);
             }
         } else { // other rows
             for(c = 0; c < m2C && count < P; c++) {
@@ -58,17 +59,31 @@ void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, str
                 for(int k = 0; k < m1C; k++) {
                     ans += m1[r][k] * m2[k][c];
                 }
+                auxV[count*3] = r+1;
+                auxV[count*3+1] = c+1;
+                auxV[count*3+2] = ans;
                 count++;
-                fprintf(mResFile, "c%d%d %d\n", r+1, c+1, ans);
+                //fprintf(mResFile, "c%d%d %d\n", r+1, c+1, ans);
             }
         }
     }
+    // end multiplication
     // stop measuring time and calculate the elapsed time
     struct timeval end;
     gettimeofday(&end, 0);
-    long elapsedMilliseconds = end.tv_usec - begin.tv_usec; // current in microseconds, WORK HERE
-    fprintf(mResFile, "%ld", elapsedMilliseconds);
+    double elapsedMilliseconds = (double)(end.tv_usec - begin.tv_usec)/1000;
+
+    // write
+    char filename[20];
+    sprintf(filename, "resPro%d.txt", i+1);
+    FILE* mResFile = fopen(filename, "w");
+    fprintf(mResFile, "%d %d\n", m1R, m2C);
+    for(int i = 0; i < 3 * P - 2; i += 3) {
+        fprintf(mResFile, "c%d%d %d\n", auxV[i], auxV[i+1], auxV[i+2]);
+    }
+    fprintf(mResFile, "%lf", elapsedMilliseconds);
     fclose(mResFile);
+    free(auxV);
 }
 
 int main(int argc, char* argv[]) {
