@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h> 
+#include <sys/time.h>
 
 int** buildMatrix(char* mFileArg, int* mR, int* mC) {
     FILE* mFile = fopen(mFileArg, "r");
@@ -29,8 +29,10 @@ int** multMatrix(int** m1, int** m2, int m1R, int m2R, int m2C, double* timeSpen
         matrix[r] = (int*)malloc(m2C * sizeof(int));
     }
 
-    // multiplication start
-    clock_t begin = clock();
+    // start multiplication 
+    // start measuring time
+    struct timeval begin;
+    gettimeofday(&begin, 0);
     for(int r = 0; r < m1R; r++) {
         for(int c = 0; c < m2C; c++) {
             matrix[r][c] = 0;
@@ -40,10 +42,13 @@ int** multMatrix(int** m1, int** m2, int m1R, int m2R, int m2C, double* timeSpen
             }
         }
     }
-    // multiplication end
-    clock_t end = clock();
+    // end multiplication
+    // stop measuring time and calculate the elapsed time
+    struct timeval end;
+    gettimeofday(&end, 0);
+    double elapsedMilliseconds = (double)(end.tv_usec - begin.tv_usec)/1000; // milli
 
-    *timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;    
+    *timeSpent = elapsedMilliseconds;    
 
     return matrix;
 }
