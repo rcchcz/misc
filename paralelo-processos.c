@@ -37,7 +37,7 @@ void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, str
     int column = index%m2C;
     int count = 0;
     int r, c, ans;
-    int* auxV = (int*)malloc(3 * P * sizeof(int)); // r c ans
+    long long int* auxV = (long long int*)malloc(3 * P * sizeof(long long int)); // r c ans
     
     // start multiplication
     for(r = row; r < m1R && count < P; r++) {
@@ -79,7 +79,7 @@ void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, str
     FILE* mResFile = fopen(filename, "w");
     fprintf(mResFile, "%d %d\n", m1R, m2C);
     for(int i = 0; i < 3 * P - 2; i += 3) {
-        fprintf(mResFile, "c%d%d %d\n", auxV[i], auxV[i+1], auxV[i+2]);
+        fprintf(mResFile, "m%lld_%lld %lld\n", auxV[i], auxV[i+1], auxV[i+2]);
     }
     fprintf(mResFile, "%lf", elapsedMilliseconds);
     fclose(mResFile);
