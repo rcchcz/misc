@@ -71,7 +71,7 @@ void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, str
     // stop measuring time and calculate the elapsed time
     struct timeval end;
     gettimeofday(&end, 0);
-    long secondsToMicroseconds = (end.tv_sec - begin.tv_sec) * 1000000; 
+    long secondsInMicroseconds = (end.tv_sec - begin.tv_sec) * 1000000; 
     long microseconds = end.tv_usec - begin.tv_usec; 
     double milliseconds = (double)(secondsInMicroseconds + microseconds)/1000;
 
