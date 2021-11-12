@@ -71,7 +71,9 @@ void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, str
     // stop measuring time and calculate the elapsed time
     struct timeval end;
     gettimeofday(&end, 0);
-    double elapsedMilliseconds = (double)(end.tv_usec - begin.tv_usec)/1000;
+    long secondsToMicroseconds = (end.tv_sec - begin.tv_sec) * 1000000; 
+    long microseconds = end.tv_usec - begin.tv_usec; 
+    double milliseconds = (double)(secondsInMicroseconds + microseconds)/1000;
 
     // write
     char filename[20];
@@ -81,7 +83,7 @@ void multMatrix(int** m1, int** m2, int i, int P, int m1R, int m1C, int m2C, str
     for(int i = 0; i < 3 * P - 2; i += 3) {
         fprintf(mResFile, "m%lld_%lld %lld\n", auxV[i], auxV[i+1], auxV[i+2]);
     }
-    fprintf(mResFile, "%lf", elapsedMilliseconds);
+    fprintf(mResFile, "%lf", milliseconds);
     fclose(mResFile);
     free(auxV);
 }
