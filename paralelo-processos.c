@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
+#include <sys/wait.h>
 #include <math.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -110,7 +111,10 @@ int main(int argc, char* argv[]) {
             break;
         } 
     }
-
+    
+    // negative when no more child processes are running
+    while(wait(NULL) > 0);
+    
     deallocateMatrix(m1, m1R);
     deallocateMatrix(m2, m2R);
 
