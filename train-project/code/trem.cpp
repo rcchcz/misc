@@ -32,7 +32,7 @@ void Trem::changeSpeed(int value){
 void Trem::run() {
     while(true) {
         switch(ID) {
-        case 1:     //Trem 1
+        case 1:     //T1
             if(velocidade != 200){
                 if (y == 30 && x < 540) {
                    if(x == 520) {
@@ -80,7 +80,7 @@ void Trem::run() {
             }
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
-        case 2: //Trem 2
+        case 2: //T2
             if(velocidade != 200) {
                 if (y == 30 && x < 810) {
                     if(x == 560) {
@@ -129,7 +129,7 @@ void Trem::run() {
            }
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
-        case 3: //Trem 3
+        case 3: //T3
             if(velocidade != 200) {
                 if (y == 150 && x < 414) {
                     if(x == 244) {
@@ -165,7 +165,7 @@ void Trem::run() {
                 }
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
-        case 4: //Trem 4
+        case 4: //T4
             if(velocidade != 200) {
             if (y == 150 && x < 685) {
                 if(x == 565) {
@@ -228,7 +228,7 @@ void Trem::run() {
             emit updateGUI(ID, x,y);    //Emite um sinal
             }
             break;
-        case 5: //Trem 5
+        case 5: //T5
             if(velocidade != 200) {
             if (y == 150 && x < 955) {
                 if(x == 835) {
