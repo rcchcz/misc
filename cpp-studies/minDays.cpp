@@ -17,13 +17,13 @@ int minDays(vector<float> duration) {
         if(sumHours + duration[front] <= 3) {
             sumHours += duration[front];
             front++;
-            if(front == back) { days++; }
         } else {
             days++;
             back--;
             sumHours = duration[back];
-            if(front == back) { days++; }
         }
+        
+        if(front == back) { days++; }
         
     }
 
