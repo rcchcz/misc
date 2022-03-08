@@ -1,0 +1,15 @@
+C:\Users\rita\dev\ColorEditor\bin\Debug\net6.0\ColorEditor.exe
+C:\Users\rita\dev\ColorEditor\bin\Debug\net6.0\ColorEditor.deps.json
+C:\Users\rita\dev\ColorEditor\bin\Debug\net6.0\ColorEditor.runtimeconfig.json
+C:\Users\rita\dev\ColorEditor\bin\Debug\net6.0\ColorEditor.dll
+C:\Users\rita\dev\ColorEditor\bin\Debug\net6.0\ColorEditor.pdb
+C:\Users\rita\dev\ColorEditor\obj\Debug\net6.0\ColorEditor.csproj.AssemblyReference.cache
+C:\Users\rita\dev\ColorEditor\obj\Debug\net6.0\ColorEditor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rita\dev\ColorEditor\obj\Debug\net6.0\ColorEditor.AssemblyInfoInputs.cache
+C:\Users\rita\dev\ColorEditor\obj\Debug\net6.0\ColorEditor.AssemblyInfo.cs
+C:\Users\rita\dev\ColorEditor\obj\Debug\net6.0\ColorEditor.csproj.CoreCompileInputs.cache
+C:\Users\rita\dev\ColorEditor\obj\Debug\net6.0\ColorEditor.dll
+C:\Users\rita\dev\ColorEditor\obj\Debug\net6.0\refint\ColorEditor.dll
+C:\Users\rita\dev\ColorEditor\obj\Debug\net6.0\ColorEditor.pdb
+C:\Users\rita\dev\ColorEditor\obj\Debug\net6.0\ColorEditor.genruntimeconfig.cache
+C:\Users\rita\dev\ColorEditor\obj\Debug\net6.0\ref\ColorEditor.dll

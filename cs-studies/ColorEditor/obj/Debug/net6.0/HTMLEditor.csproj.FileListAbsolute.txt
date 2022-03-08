@@ -1,0 +1,15 @@
+C:\Users\rita\dev\HTMLEditor\bin\Debug\net6.0\HTMLEditor.exe
+C:\Users\rita\dev\HTMLEditor\bin\Debug\net6.0\HTMLEditor.deps.json
+C:\Users\rita\dev\HTMLEditor\bin\Debug\net6.0\HTMLEditor.runtimeconfig.json
+C:\Users\rita\dev\HTMLEditor\bin\Debug\net6.0\HTMLEditor.dll
+C:\Users\rita\dev\HTMLEditor\bin\Debug\net6.0\HTMLEditor.pdb
+C:\Users\rita\dev\HTMLEditor\obj\Debug\net6.0\HTMLEditor.csproj.AssemblyReference.cache
+C:\Users\rita\dev\HTMLEditor\obj\Debug\net6.0\HTMLEditor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rita\dev\HTMLEditor\obj\Debug\net6.0\HTMLEditor.AssemblyInfoInputs.cache
+C:\Users\rita\dev\HTMLEditor\obj\Debug\net6.0\HTMLEditor.AssemblyInfo.cs
+C:\Users\rita\dev\HTMLEditor\obj\Debug\net6.0\HTMLEditor.csproj.CoreCompileInputs.cache
+C:\Users\rita\dev\HTMLEditor\obj\Debug\net6.0\HTMLEditor.dll
+C:\Users\rita\dev\HTMLEditor\obj\Debug\net6.0\refint\HTMLEditor.dll
+C:\Users\rita\dev\HTMLEditor\obj\Debug\net6.0\HTMLEditor.pdb
+C:\Users\rita\dev\HTMLEditor\obj\Debug\net6.0\HTMLEditor.genruntimeconfig.cache
+C:\Users\rita\dev\HTMLEditor\obj\Debug\net6.0\ref\HTMLEditor.dll
