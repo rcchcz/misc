@@ -5,7 +5,7 @@ class Solution:
         ans = ""
         pos = 0
 
-        for i in range(min_len - 1):
+        for i in range(min_len):
             for s in strs:
                 if s[i] != strs[0][pos]:
                     return ans
