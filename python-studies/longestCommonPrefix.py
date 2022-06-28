@@ -9,6 +9,5 @@ class Solution:
                 if s[i] != strs[0][i]:
                     return ans
             ans += s[i]
-            i += 1
     
         return ans
