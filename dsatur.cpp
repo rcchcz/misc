@@ -5,6 +5,16 @@
 #include <tuple>
 using namespace std;
 
+void printadlist(vector<int> graph[], int v) {
+  cout << "Adjacency list" << endl;
+  for(int i = 0; i < v; i++) {
+    cout << "[" << i << "]: ";
+    for(int j = 0; j < graph[i].size(); j++) { cout << graph[i][j] << " "; }
+    cout << "" << endl;
+  }
+}
+
+// adjacency list
 void addEdge(vector<int> graph[], int a, int b) {
   graph[a].push_back(b);
   graph[b].push_back(a);
@@ -100,7 +110,7 @@ int buildGraph(istream& f) {
   bool first_line = true;  
 
   getline(f, line); // number of vertices and edges
-  v = stoi(line.substr(0, line.find_first_of(" "))); // get only the vertices
+  v = stoi(line.substr(0, line.find_first_of(" "))); // get the vertices
   vector<int> graph[v]; // create graph
 
   while(getline(f, line)) {
@@ -108,6 +118,8 @@ int buildGraph(istream& f) {
     b = stoi(line.substr(line.find_first_of(" ") + 1, line.length()));
     addEdge(graph, a, b); 
   }
+
+  // printadlist(graph, v);
 
   return dsatur(graph, v);
 }
