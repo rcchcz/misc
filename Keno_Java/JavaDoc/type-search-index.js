@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"Keno","l":"Bet"},{"p":"Keno","l":"DefaultSpots"},{"p":"Keno","l":"Draw"},{"p":"Keno","l":"GameMode"},{"p":"Keno","l":"GM"},{"p":"Keno","l":"Hits"},{"p":"Keno","l":"IOError"},{"p":"Keno","l":"Main"},{"p":"Keno","l":"Payout"},{"p":"Keno","l":"RandomSpots"}]
