@@ -1,6 +1,20 @@
-# https://leetcode.com/problems/detect-capital/
+# https://leetcode.com/problems/word-pattern/
 class Solution:
-    def detectCapitalUse(self, word: str) -> bool:
-        if word == word.upper() or word == word.lower() or word == word.capitalize():
-            return True
-        return False
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        # word key - letter value
+        d  = {}
+        d2 = {}
+
+        words = s.split()
+        if len(words) != len(pattern): return False
+        
+        i = 0
+        while i < len(words):
+            if words[i] not in d and pattern[i] not in d2:
+                d[words[i]] = pattern[i]
+                d2[pattern[i]] = True
+            elif d.get(words[i]) != pattern[i]:
+                return False
+            i += 1
+        
+        return True
