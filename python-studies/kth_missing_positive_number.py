@@ -3,17 +3,14 @@ class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
         N = len(arr)
         i, j = 0, 1
-        skip = []
+        skip = 0
 
         while i < N:
             if arr[i] != j:
-                skip.append(j)
+                skip += 1
+                if k == skip: return j
             else:
                 i += 1
             j += 1
         
-        cnt = len(skip)
-        if cnt < k:
-            return arr[-1] + (k-cnt)
-        else:
-            return skip[k-1]
+        return arr[-1] + (k-skip)
