@@ -7,11 +7,6 @@ class Solution:
         # 4 -> 5 (1,1,1,1 - 1,1,2 - 1,2,1 - 2,1,1 - 2,2)
         # 5 -> 8 (1,1,1,1,1 - 1,1,1,2 - 1,1,2,1 - 1,2,1,1 - 2,1,1,1 - 1,2,2 - 2,1,2 - 2,2,1)
         # (fibonacci sequence)
-        
-        #def steps(n):
-        #    if n <= 2: return n
-        #    return steps(n-1) + steps(n-2)
-        # return steps(n)
 
         if n <= 2: return n
         
