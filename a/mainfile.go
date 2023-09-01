@@ -4,9 +4,9 @@ import (
     "encoding/json"
     "fmt"
     "os"
-	"os/exec"
+    "os/exec"
     "math/rand"
-	"time"
+    "time"
 )
 
 func GenerateRandomString() string {
@@ -23,7 +23,7 @@ func GenerateRandomString() string {
 type MyData struct {
     KPI1  string `json:"kpi1"`
     KPI2 int    `json:"kpi2"`
-	KPI3 int    `json:"kpi3"`
+    KPI3 int    `json:"kpi3"`
 }
 
 func main() {
