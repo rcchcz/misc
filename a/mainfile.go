@@ -30,8 +30,8 @@ func main() {
     // Create and populate your JSON data
     rand.Seed(time.Now().UnixNano())
     kpi1 := GenerateRandomString()
-	kpi2 := rand.Intn(100)
-	kpi3 := rand.Intn(100)
+    kpi2 := rand.Intn(100)
+    kpi3 := rand.Intn(100)
     data := MyData{KPI1: kpi1, KPI2: kpi2, KPI3: kpi3}
 
     // Marshal the data into JSON format
